@@ -1,1 +1,7 @@
-<p>todos works!</p>
+<div class="todo-list">
+    <h1> lista todo</h1>
+    <hr>
+    <!-- Possiamo creare degli attributi non esistenti per gli elementi html chiamate direttive -->
+    <app-todo *ngFor="let t of todos" [todo]="t" ></app-todo>
+    <!-- Diamo quindi ogni oggetto t in pasto al tag attraverso [todo]="t" -->
+</div>

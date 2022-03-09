@@ -1,6 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 .todo-list{
+    color: white;
     background-color: azure;
     padding: 1rem;
     margin-bottom: 1rem;
+    display: flex;
+    background-color: black;
+}
+
+.card{
+    margin-right: 2em;
+    width:'250px';
+}
+
+body{
+    background-color: black;
+}
+
+h1{
+    color: white;
 }

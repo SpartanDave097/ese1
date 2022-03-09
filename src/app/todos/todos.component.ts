@@ -10,16 +10,19 @@ export class TodosComponent implements OnInit {
   nome: string = "";
 
   todo1:Todo = {
+    titolo: "todo",
     testo: "Fare la spesa",
     completato: false
   }
 
   todo2:Todo = {
+    titolo: "todo",
     testo: "Portare fuori il cane",
     completato: false
   }
 
   todo3:Todo = {
+    titolo: "todo",
     testo: "Dare da mangiare al gatto",
     completato: false
   }

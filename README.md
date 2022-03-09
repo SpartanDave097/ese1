@@ -1,27 +1,12 @@
-# Ese1
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Esercizio per il 24/02/2022
+1. create interfaccia pokemon
+2. create componente pokemon-list
+3. create componente pokemon
+4. creare componente attacco (+ interfaccia)
+5. importate i dati da json (import pokemons from '../pokemons')
+6. visualizzare il pokemon-list in app component
+7. fare il binding della lista e del singolo
+8. caricate anche le immagini
+9. in base al type del pokemon colorate la card di conseguenza
+10. nel componente pokemon, inserire un bottone che nasconde/mostra (toggle) gli attacchi
+11. provate a sbizzarrirvi con *ngIf, ngClass, (click)

@@ -1,0 +1,11 @@
+<div>
+    {{attacco.name}} - 
+    <ul>
+        <li *ngFor="let c of attacco.cost">
+            <div class="energy" [ngClass]="c">
+
+            </div>
+        </li>
+    </ul>
+    <p>danno: {{attacco.damage}} </p>
+</div>

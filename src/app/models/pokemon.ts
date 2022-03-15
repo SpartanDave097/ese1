@@ -145,6 +145,7 @@ export interface Pokemon {
     abilities: Ability[];
     regulationMark: string;
     evolvesTo: string[];
+    currentHP: number;
 }
 
 export interface RootObject {

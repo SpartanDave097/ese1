@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ese1';
+  title = 'ng-todo';
+
+  visualizzaArena: boolean = true;
+  visualizzaLista: boolean = false;
+
+  listaOff(): void {
+    this.visualizzaLista = false;
+  }
+
+  arenaOff(): void {
+    this.visualizzaArena = false;
+  }
 }
+

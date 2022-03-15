@@ -1,0 +1,15 @@
+<div class="alert alert-dark" *ngIf="alertCorrente.tipo == 'start'" role="alert">
+    <p>Inizia <strong>{{ alertCorrente.infoStart }}</strong></p>
+</div>
+
+<div class="alert alert-warning" *ngIf="alertCorrente.tipo == 'attack' && alertCorrente.infoAttacco" role="alert">
+    <p><strong>{{ alertCorrente.infoAttacco.attaccante }}</strong> usa <i>{{ alertCorrente.infoAttacco.attacco }}</i>
+    </p>
+    <p *ngIf="alertCorrente.infoAttacco.critico && alertCorrente.infoAttacco.danni > 0">è superefficace!</p>
+    <p *ngIf="alertCorrente.infoAttacco.danni == 0">il colpo viene schivato!</p>
+    <p>{{ alertCorrente.infoAttacco.target }} subisce <strong>{{ alertCorrente.infoAttacco.danni }} danni</strong></p>
+</div>
+
+<div class="alert alert-success" *ngIf="alertCorrente.tipo == 'win'" role="alert">
+    <p>Il vincitore è <strong>{{ alertCorrente.infoWin }}</strong></p>
+</div>

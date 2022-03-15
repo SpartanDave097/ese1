@@ -4,6 +4,12 @@
         <div class="card-body">
             <h5 class="card-title"> {{pokemon.name}} </h5>
         </div>
+
         <img [src]="pokemon.images.small" alt="robe"/>
+        <h4> Attacchi </h4>
+        <app-pokemon-attacco *ngFor="let a of pokemon.attacks" [attacco]="a"></app-pokemon-attacco>
+        <br>
+        <h4> Debolezze </h4>
+        <app-pokemon-debolezze *ngFor="let d of pokemon.weaknesses" [debolezze]="d"></app-pokemon-debolezze>
     </div>
 </div>

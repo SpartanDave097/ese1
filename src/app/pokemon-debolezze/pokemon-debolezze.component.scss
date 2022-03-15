@@ -1,0 +1,56 @@
+ul{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+}
+
+li{
+    list-style: none;
+}
+
+.debtext{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.energy{
+    display: inline-block; /* Display icon as inline block */
+    width: 60px; /* Icon width */
+    height: 60px; /* Icon height */
+    background: url('../poke-ene.png');
+    background-size: 300px;
+}
+
+.Colorless{
+    background-position: -63px -7px;
+}
+.Darkness{
+    background-position: -63px -68px;
+}
+.Dragon{
+    background-position: 123px -68px;
+}
+.Fairy{
+    background-position: -120px -129px;
+}
+.Fighting{
+    background-position: -7px -68px;
+}
+.Fire{
+    background-position: -120px -7px;
+}
+.Grass{
+    background-position: 65px -7px;
+}
+.Lightning{
+    background-position: -7px -7px;
+}
+.Metal{
+    background-position: -120px -68px;
+}
+.Psychic{
+    background-position: 65px -68px;
+}
+.Water{
+    background-position: 123px -7px;
+}

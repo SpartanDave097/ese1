@@ -1,0 +1,42 @@
+<div class="seleziona">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="pokemon1">Pokemon 1</label>
+      </div>
+      <select class="custom-select" id="pokemon1" [(ngModel)]="selectedP1" (ngModelChange)="setPokemon(selectedP1)"
+        [disabled]="scontroStarted">
+        <option value="" selected>Scegli pokemon</option>
+        <option *ngFor="let p of pokemons" [ngValue]="p">{{ p.name }}</option>
+      </select>
+    </div>
+  
+    <button class="btn btn-primary" [disabled]="selectedP1 == '' || selectedP2 == ''" *ngIf="!scontroStarted"
+      (click)="start()">Inizia
+      Scontro</button>
+    <button class="btn btn-danger" *ngIf="scontroStarted" (click)="end()">Termina Scontro</button>
+  
+    <div class="input-group mb-3">
+      <select class="custom-select" id="pokemon2" [(ngModel)]="selectedP2" (ngModelChange)="setPokemon(selectedP2)"
+        [disabled]="scontroStarted">
+        <option value="" selected>Scegli pokemon</option>
+        <option *ngFor="let p of pokemons" [ngValue]="p">{{ p.name }}</option>
+      </select>
+      <div class="input-group-append">
+        <label class="input-group-text" for="pokemon2">Pokemon 2</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="pokemon-list">
+    <app-pokemon *ngIf="selectedP1 != ''" [pokemon]="selectedP1"
+      (onAttacco)="eseguiAttacco($event, selectedP1, selectedP2)" [arenaOn]="true" [toccaAMe]="toccaAP1">
+    </app-pokemon>
+  
+    <div *ngIf="alerts.length > 0">
+      <app-pokemon-alert *ngFor="let a of alerts" [alertCorrente]="a"></app-pokemon-alert>
+    </div>
+  
+    <app-pokemon *ngIf="selectedP2 != ''" [pokemon]="selectedP2"
+      (onAttacco)="eseguiAttacco($event, selectedP2, selectedP1)" [arenaOn]="true" [toccaAMe]="toccaAP2">
+    </app-pokemon>
+  </div>

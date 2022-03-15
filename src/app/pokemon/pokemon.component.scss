@@ -1,0 +1,135 @@
+/*#region GENERALI */
+h5{
+    display: inline-block;
+  }
+  
+  hr{
+    grid-column: 1 / 4;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    grid-column: 3;
+  }
+  
+  ul li {
+    margin: 0.2rem;
+  }
+  
+  .card-body{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+  }
+  
+  .pokemon-region-title{
+    grid-column: 1 / 4;
+    justify-self: center;
+  }
+  
+  .morto{
+    background-color: rgba(87, 0, 0, 0.623);
+    transform:rotate(180deg);
+  }
+  /*#endregion GENERALI */
+  
+  /*#region HEADER */
+  .pokemon-header{
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: 150px 100px 50px;
+  }
+  
+  .pokemon-nome{
+    grid-column: 1 / 2;
+  }
+  
+  .pokemon-hp{
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
+  
+  .pokemon-type{
+    grid-column: 3;
+    justify-self: end;
+  }
+  /*#endregion HEADER */
+  
+  /*#region IMMAGINE */
+  // .pokemon-img{
+  //   position: absolute;
+  //   top: -35px;
+  //   left: -15px;
+  // }
+  
+  #crop-img {
+    grid-column: 1 / 4;
+    justify-self: center;
+    width: 300px;
+    height: 200px;
+    
+    background-repeat: no-repeat;
+    background-position: 0 -30px; /* potrei mettere anche 0 -50px ma su alcune si vedono gli attacchi */
+    background-size: cover;
+  
+  
+    -webkit-box-shadow: inset 0px 0px 9px 9px #FFFFFF;
+    -moz-box-shadow: inset 0px 0px 9px 9px #FFFFFF;
+    -o-box-shadow: inset 0px 0px 9px 9px #FFFFFF;
+    box-shadow: inset 0px 0px 9px 9px #FFFFFF;
+  }
+  /*#endregion IMMAGINE */
+  
+  /*#region ATTACK */
+  .pokemon-attack{
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: 200px 75px 25px;
+    gap: 10px;
+  }
+  
+  .app-pokemon-attacco{
+    grid-column: 1 / 4;
+  }
+  /*#endregion ATTACK */
+  
+  /*#region WEAKNESS */
+  .pokemon-weakness{
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: 150px 100px 50px;
+    gap: 10px;
+  }
+  /*#endregion WEAKNESS */
+  
+  /*#region HP BAR */
+  progress{
+    grid-column: 1 / 4;
+    justify-self: center;
+    width: 100%;
+  }
+  
+  progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+  
+  progress[value]::-webkit-progress-value {
+    background-image:
+         -webkit-linear-gradient(top, 
+                                 rgba(255, 255, 255, .25), 
+                                 rgba(0, 0, 0, .25)),
+         -webkit-linear-gradient(left, #f44, #e0b12f,  #15cc2e);
+  
+      border-radius: 2px; 
+      background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+  /*#endregion HP BAR */

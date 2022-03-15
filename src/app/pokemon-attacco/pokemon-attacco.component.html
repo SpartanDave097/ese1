@@ -1,11 +1,20 @@
-<div>
-    {{attacco.name}} - 
-    <ul>
-        <li *ngFor="let c of attacco.cost">
-            <div class="energy" [ngClass]="c">
 
-            </div>
-        </li>
-    </ul>
-    <p>danno: {{attacco.damage}} </p>
+<div class="pokemon-attacco">
+    <div class="pokemon-nome-attacco">
+        <ul>
+            <li *ngFor="let c of attacco.cost">
+                <div class="energy" [ngClass]="c"></div>
+            </li>
+        </ul>
+        <h6 class="nome-attacco">{{ attacco.name }}</h6>
+        <h6 class="danno-attacco">{{ attacco.damage }}</h6>
+    </div>
+    <small>{{ attacco.text }}</small>
+    <!-- <div [ngSwitch]="c" *ngFor="let c of attacco.cost">
+        <div *ngSwitchCase="'Colorless'" class="energy colorless"></div>
+        <div *ngSwitchCase="'Fire'" class="energy fire"></div>
+        <div *ngSwitchCase="'Water'" class="energy water"></div>
+        <div *ngSwitchCase="'Grass'" class="energy grass"></div>
+        <div *ngSwitchDefault class="energy"></div>
+    </div> -->
 </div>

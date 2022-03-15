@@ -1,4 +1,39 @@
-<div class=" d-inline-flex p-2 bd-highlight">
+<div class="card" [ngClass]="{'morto' : pokemon.currentHP <= 0 && arenaOn}">
+    <div class="card-body">
+        <div class="pokemon-header">
+            <h5 class="pokemon-nome">{{pokemon.name}}</h5>
+            <div class="pokemon-hp">
+                <small>Hp: </small>
+                <h5 *ngIf="arenaOn">{{ pokemon.currentHP }}</h5>
+                <h5 *ngIf="!arenaOn">{{ pokemon.hp }}</h5>
+            </div>
+            <div class="pokemon-type">
+                <ul>
+                    <li *ngFor="let c of pokemon.types">
+                        <div class="energy" [ngClass]="c"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <progress [value]="pokemon.currentHP" [max]="pokemon.hp" *ngIf="arenaOn"></progress>
+        <div id='crop-img' [ngStyle]="{'background-image': 'url(' + pokemon.images.small + ')'}"></div>
+        <div class="pokemon-attack">
+            <h5 class="pokemon-region-title">Attacchi</h5>
+            <div class="app-pokemon-attacco" *ngFor="let a of pokemon.attacks">
+                <app-pokemon-attacco [attacco]="a"></app-pokemon-attacco>
+                <button (click)="attacca(a)" [disabled]="!toccaAMe || pokemon.currentHP <= 0"
+                    *ngIf="arenaOn">Attacca</button>
+            </div>
+        </div>
+        <hr>
+        <div class="pokemon-weakness">
+            <h5 class="pokemon-region-title">Debolezze</h5>
+            <app-pokemon-debolezze *ngFor="let d of pokemon.weaknesses" [debolezze]="d"></app-pokemon-debolezze>
+        </div>
+    </div>
+</div>
+
+<!--<div class=" d-inline-flex p-2 bd-highlight">
     <div class="card" style="width: 18rem;">
         
         <div class="card-body">
@@ -12,4 +47,4 @@
         <h4> Debolezze </h4>
         <app-pokemon-debolezze *ngFor="let d of pokemon.weaknesses" [debolezze]="d"></app-pokemon-debolezze>
     </div>
-</div>
+</div> -->

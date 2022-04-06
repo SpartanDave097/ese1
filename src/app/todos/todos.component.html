@@ -1,12 +1,17 @@
-<div class="container">
-    <h1> lista todo</h1>
-    <div class="todo-list card-deck">
-
-        <hr>
-        <!-- Possiamo creare degli attributi non esistenti per gli elementi html chiamate direttive -->
-        <app-todo *ngFor="let t of todos" [todo]="t" ></app-todo>
-        <!-- Diamo quindi ogni oggetto t in pasto al tag attraverso [todo]="t" -->
-        <app-todo-edit></app-todo-edit>
+<div>
+    <h1>Lista Todo</h1>
+    <div>
+        Indice del Todo da modificare: <br>
+        <select class="form-select" [(ngModel)]="indexTodo">
+            <option *ngFor="let t of todos; let i = index" [ngValue]="i">{{t.title}}</option>
+        </select>
+        <!-- <input type="number" [(ngModel)]="indexTodo"> <br> -->
+        <button type="button" (click)="editTodo()">Modifica Todo</button>
     </div>
-    
+    <div class="card-list">
+        <app-todo *ngFor="let t of todos" [todoCorrente]="t"></app-todo>
+    </div>
+    <!-- <app-todo-edit [todoDaModificare]="todoSelezionato"></app-todo-edit> -->
+    <button class="btn btn-primary" (click)="caricaTodos()">Aggiorna</button>
+
 </div>

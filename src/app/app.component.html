@@ -1,5 +1,6 @@
-<div class="container">
-    <!-- <app-todos></app-todos> -->
+<!--
+  <div class="container">
+
     
     <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" role="switch" id="arena-switch" [(ngModel)]="visualizzaArena" (ngModelChange)="listaOff()">
@@ -11,6 +12,15 @@
       </div>
     <app-pokemon-list *ngIf="visualizzaLista"></app-pokemon-list>
     <app-pokemon-arena *ngIf="visualizzaArena" [ngClass]="visualizzaArena ? 'arena-on' : ''"></app-pokemon-arena>
-</div>
+  </div> 
+-->
 
 <!-- <app-todos></app-todos> -->
+<div class="container">
+  <nav>
+    <a routerLink="/todos"> Todos </a>
+    <a routerLink="/pokemoni"> Pokemoni </a>
+    <a routerLink="/arena"> Arena </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

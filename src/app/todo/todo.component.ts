@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from '../models/todos';
-import { NgStyle } from '@angular/common';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -9,29 +9,32 @@ import { NgStyle } from '@angular/common';
 })
 export class TodoComponent implements OnInit {
 
-  @Input() //scrivendo input prima, 
-  todo!: Todo ; //passeremo quella variabile anche all'esterno del component
-  
+  @Input()
+  todoCorrente!: Todo;
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
   }
 
-  leggi():void{
-    alert(this.todo.testo)
+  leggi(): void {
+    alert(this.todoCorrente.testo);
   }
 
-  edit():void{
-    alert(this.todo.testo)
+  edit(): void {
+    console.log(this.todoCorrente);
+    // console.log(this.getColore());
   }
 
-  getColore(){
-    if (this.todo.completato) {
-      return 'green'
+  getColore() {
+    if (this.todoCorrente.completed) {
+      return 'green';
     } else {
-      return 'red'
+      return 'red';
     }
   }
 
+  rimuoviTodo() {
+    this.todoService.deleteTodo(this.todoCorrente);
+  }
 }

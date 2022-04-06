@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
@@ -13,6 +13,7 @@ import { PokemonAttaccoComponent } from './pokemon-attacco/pokemon-attacco.compo
 import { PokemonDebolezzeComponent } from './pokemon-debolezze/pokemon-debolezze.component';
 import { PokemonArenaComponent } from './pokemon-arena/pokemon-arena.component';
 import { PokemonAlertComponent } from './pokemon-alert/pokemon-alert.component';
+import { CarrelloComponent } from './carrello/carrello.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,14 @@ import { PokemonAlertComponent } from './pokemon-alert/pokemon-alert.component';
     PokemonAttaccoComponent,
     PokemonDebolezzeComponent,
     PokemonArenaComponent,
-    PokemonAlertComponent
+    PokemonAlertComponent,
+    CarrelloComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

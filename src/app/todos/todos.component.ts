@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import Servizio from '../models/Servizio';
 import { Todo } from '../models/todos';
+import { TodoService } from '../todo.service';
+
 
 @Component({
   selector: 'app-todos',
@@ -8,30 +11,40 @@ import { Todo } from '../models/todos';
 })
 export class TodosComponent implements OnInit {
   nome: string = "";
+  indexTodo!: number;
+  todoSelezionato!: Todo;
+  todos: Todo[] = [];
 
-  todo1:Todo = {
-    titolo: "todo",
-    testo: "Fare la spesa",
-    completato: false
+  constructor(private todoService: TodoService) {
+
   }
-
-  todo2:Todo = {
-    titolo: "todo",
-    testo: "Portare fuori il cane",
-    completato: false
-  }
-
-  todo3:Todo = {
-    titolo: "todo",
-    testo: "Dare da mangiare al gatto",
-    completato: false
-  }
-
-  todos = [this.todo1,this.todo2,this.todo3]
-
-  constructor() { }
 
   ngOnInit(): void {
+    this.caricaTodos();
+  }
+
+  caricaTodos() {
+    this.todoService.getTodos().subscribe(t => {
+      console.log(t);
+      this.todos = t;
+    });
+  }
+
+  saluta(chi: string, numeroDiVolte: number): void {
+    for (let i = 0; i < numeroDiVolte; i++) {
+      console.log(`ciao ${chi}`);
+    }
+
+  }
+
+  somma(n1: any, n2: number): any {
+    return n1 + n2;
+  }
+
+  editTodo() {
+    this.todoSelezionato = this.todos[this.indexTodo];
+    console.log(this.todoSelezionato);
   }
 
 }
+

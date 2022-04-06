@@ -1,30 +1,32 @@
-<div class="card" [ngClass]="{'bg-success': todo.completato, 'bg-danger': !todo.completato}">
+<div class="card" [ngClass]="{'bg-success': todoCorrente.completed, 'bg-danger': !todoCorrente.completed}">
     <div class="card-body">       
-        <p>{{todo.testo | uppercase}}</p>
+        <p>{{todoCorrente.testo | uppercase}}</p>
         <button class="btn btn-primary" (click)="leggi()"> Leggi </button>
         <hr>
         <div class="form-group">
             <label for="titolo"> Titolo </label>
-            <input class="form-control" type="text" [(ngModel)]="todo.titolo"  id="titolo">
+            <input class="form-control" type="text" [(ngModel)]="todoCorrente.title"  id="titolo">
         </div>
         <div class="form-group">
             <label for="testo"> Testo </label>
-            <input class="form-control" type="text" [(ngModel)]="todo.testo"  id="testo">
+            <input class="form-control" type="text" [(ngModel)]="todoCorrente.testo"  id="testo">
         </div>
         <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="completato" [(ngModel)]="todo.completato">
+                <input class="form-check-input" type="checkbox" value="" id="completato" [(ngModel)]="todoCorrente.completed">
                 <label class="form-check-label" for="completato">
                   Completato
                 </label>
               </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary" (click)="edit()"> Modifica </button>
+            <!-- <button class="btn btn-primary" (click)="edit()">Modifica</button> -->
+            <a class="btn btn-primary" routerLink="/todos/edit/{{todoCorrente.id}}">Modifica</a>
+            <button class="btn btn-danger" (click)="rimuoviTodo()">Rimuovi</button>
         </div>
     </div>
     <div class="card-footer">
-    <p class="text-muted">{{todo.completato? "completato" : "da fare"}}</p>
+    <p class="text-muted">{{todoCorrente.completed? "completato" : "da fare"}}</p>
     </div>
 </div>
 
